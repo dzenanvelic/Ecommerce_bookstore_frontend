@@ -1,0 +1,34 @@
+.sidemenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70vw;
+    background-color: #DCC7AA;
+
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+    transform: translateX(-100%)
+}
+
+.active {
+    transform: translateX(0%)
+}
+
+.sidemenu-nav {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+
+}
+
+.sidebar-pages-link,
+.sidebar-users-link {
+    display: flex;
+    flex-direction: column;
+}

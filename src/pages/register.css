@@ -1,0 +1,25 @@
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 50px);
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+    background-size: cover;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.redirect {
+    cursor: pointer;
+    text-align: center;
+    padding-top: 10px;
+}
+
+a {
+
+    text-decoration: none;
+}

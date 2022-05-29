@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import SideMenu from './elements/SideMenu';
+import BackLayer from './elements/BackLayer';
+import { useState } from 'react';
+
+function App(props) {
+  const [open, setOpen] = useState(false)
+
+  const openDrawer = () => {
+    setOpen(true)
+  }
+  const closeDrawer = () => {
+    setOpen(false)
+  }
+  return (<>
+    <Router>
+      <Navbar openDrawer={openDrawer} />
+      {open && <BackLayer closeDrawer={closeDrawer} open={open} />}
+      <SideMenu closeDrawer={closeDrawer} open={open} />
+      <Routes>
+
+
+
+
+
+        <Route path='/' element={<Home />} />
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+
+      </Routes>
+
+    </Router>
+  </>);
 }
 
 export default App;
